@@ -1,6 +1,6 @@
 #map {
-    background-image: url("../images/order-bg.png");
-    background-size: cover;
+    /* background-image: url("../images/order-bg.png"); */
+    /* background-size: cover; */
     position: fixed;
     inset: 0;
 }
