@@ -1,5 +1,5 @@
 .container {
-    background: #F4F4F4 url("../images/track-bg.png");
+    background: #F4F4F4 url("../../../../public/images/track-bg.png");
     background-size: cover;
     min-height: 100vh;
     padding: 170px 0 50px 0;
@@ -147,4 +147,20 @@
 
 .track-status-date {
     color: rgba(17, 17, 17, 0.55);
+}
+
+@media (max-width: 767px) {
+    .container {
+        padding: 130px 0 50px 0;
+    }
+
+    .track-content {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .track-result-header {
+        padding: 20px;
+    }
 }

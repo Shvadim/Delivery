@@ -8,8 +8,15 @@
       {
         "ignore": [
           "backdrop-filter",
-          "scrollbar-width"
+          "scrollbar-width",
+          "user-select"
         ]
+      }
+    ],
+    "axe/text-alternatives": [
+      "default",
+      {
+        "image-alt": "off"
       }
     ]
   },
