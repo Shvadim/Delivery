@@ -127,6 +127,7 @@ export class Order {
   }
 
   public submitOrder() {
+    this.orderId.set(null);
     const calculation = this.calculationResult();
     if (!calculation) {
       alert('Сначала рассчитайте стоимость, чтобы оформить заявку');
@@ -149,8 +150,7 @@ export class Order {
       createdAt: new Date().toISOString()
     };
 
-    this.orderId.set(10);
+    this.orderId.set(1);
     console.log(payload);
-    console.log('this.orderId()=', this.orderId());
   }
 }

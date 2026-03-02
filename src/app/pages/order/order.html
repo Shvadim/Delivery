@@ -107,8 +107,7 @@
                 </button>
             </div>
 
-            <div class="main-order-success is_visible" id="orderSuccess" 
-                >
+            <div class="main-order-success" id="orderSuccess" [class.is-visible]="orderId()">
                 <div class="main-success-icon">✓</div>
                 <div class="main-success-title">Заявка отправлена!</div>
                 <div class="main-success-title">Номер отправления – <span id="orderId">{{orderId()}}</span></div>
