@@ -32,7 +32,7 @@ describe('Order', () => {
   });
 
   it('has loading signal initially false', () => {
-    expect(component.loading()).toBeFalse();
+    expect(component.loading()).toBeFalsy();
   });
 
   it('sets loading true when calculate is called and form valid', () => {
@@ -42,6 +42,6 @@ describe('Order', () => {
     component.loading.set(false);
 
     component.calculate();
-    expect(component.loading()).toBeTrue();
+    expect(component.loading()).toBeTruthy();
   });
 });
