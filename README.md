@@ -60,3 +60,8 @@ For end-to-end (e2e) testing, run:
 ```bash
 ng e2e
 ```
+
+## День 6 интенсива
+
+* Подключение api-функций backend 
+* Deploy проекта на GitHub Pages
