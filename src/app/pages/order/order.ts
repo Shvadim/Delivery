@@ -24,6 +24,9 @@ export class Order {
   public routeForm: FormGroup;
   public orderForm: FormGroup;
 
+  // loading indicator for sidebar calculations
+  public loading: any = signal(false);
+
   public orderId: any = signal(null);
   public calculationResult: any = signal(null);
 
@@ -64,9 +67,13 @@ export class Order {
   }
 
   public calculate() {
+    // show spinner while we wait for the route calculation
+    this.loading.set(true);
     this.calculationResult.set(null);
 
     if (!this.map || this.routeForm.invalid) {
+      // nothing to do, hide loader
+      this.loading.set(false);
       return;
     }
 
@@ -116,13 +123,22 @@ export class Order {
         });
       } catch (err) {
         this.failedCalculation();
+      } finally {
+        // hide spinner once we have processed the route
+        this.loading.set(false);
       }
     });
 
-    this.mapRoute.model.events.add('requestfail', () => this.failedCalculation());
+    this.mapRoute.model.events.add('requestfail', () => {
+      // hide loader and report failure
+      this.loading.set(false);
+      this.failedCalculation();
+    });
   }
 
   private failedCalculation() {
+    // ensure spinner disappears on failure as well
+    this.loading.set(false);
     this.calculationResult.set(null);
     alert('Не удалось построить маршрут. Проверьте адреса и выбранные параметры.');
   }
